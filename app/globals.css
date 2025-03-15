@@ -3,12 +3,13 @@
 :root {
   --background: #ffffff;
   --foreground: #171717;
+  --font-geist-mono: "Courier New", Courier, monospace;
 }
 
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
+  --font-sans: Arial, Helvetica, sans-serif;
   --font-mono: var(--font-geist-mono);
 }
 
@@ -23,4 +24,57 @@ body {
   background: var(--background);
   color: var(--foreground);
   font-family: Arial, Helvetica, sans-serif;
+}
+
+/* Button container */
+.play-pause-container {
+  width: 60px; /* Bigger size */
+  height: 60px;
+  border: 1px solid rgba(255, 255, 255, 0.5);/* Outlined button */
+  border-radius: 50%;
+  /*background: linear-gradient(to bottom right, #f5f5f5, #a3a3a3);*/
+  background: rgba(255, 255, 255, 0.2);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+  position: relative;
+}
+
+/* Common styles for play and pause icons */
+.play-pause-container::before,
+.play-pause-container::after {
+  content: "";
+  position: absolute;
+  transition: all 0.3s ease-in-out;
+}
+
+/* Play Symbol (Outlined Triangle) */
+.play-btn::before {
+  width: 0;
+  height: 0;
+  border-left: 15px solid transparent; /* Left side transparent */
+  border-right: 15px solid transparent; /* Right side transparent */
+  border-bottom: 26px solid rgba(255, 255, 255, 0.5);/* Bottom outlined */
+  transform: translateX(2px) rotate(90deg); /* Rotate for Play icon */
+  border-radius: 2px;
+}
+
+/* Pause Symbol (Two Outlined Bars) */
+.pause-btn::before,
+.pause-btn::after {
+  width: 8px;
+  height: 24px;
+  background: transparent;
+  border: 1px solid rgba(255, 255, 255, 0.5);
+  border-radius: 2px;
+}
+
+.pause-btn::before {
+  transform: translateX(-6px);
+}
+
+.pause-btn::after {
+  transform: translateX(6px);
 }
