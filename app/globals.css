@@ -30,10 +30,10 @@ body {
 .play-pause-container {
   width: 60px; /* Bigger size */
   height: 60px;
-  border: 1px solid rgba(255, 255, 255, 0.5);/* Outlined button */
+  border: 2px solid rgba(255, 255, 255, 0.05);/* Outlined button */
   border-radius: 50%;
   /*background: linear-gradient(to bottom right, #f5f5f5, #a3a3a3);*/
-  background: rgba(255, 255, 255, 0.2);
+  background: rgba(255, 255, 255, 0.0);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -56,7 +56,7 @@ body {
   height: 0;
   border-left: 15px solid transparent; /* Left side transparent */
   border-right: 15px solid transparent; /* Right side transparent */
-  border-bottom: 26px solid rgba(255, 255, 255, 0.5);/* Bottom outlined */
+  border-bottom: 26px solid rgba(255, 255, 255, 0.05);/* Bottom outlined */
   transform: translateX(2px) rotate(90deg); /* Rotate for Play icon */
   border-radius: 2px;
 }
@@ -67,7 +67,7 @@ body {
   width: 8px;
   height: 24px;
   background: transparent;
-  border: 1px solid rgba(255, 255, 255, 0.5);
+  border: 1px solid rgba(255, 255, 255, 0.1);
   border-radius: 2px;
 }
 
@@ -77,4 +77,53 @@ body {
 
 .pause-btn::after {
   transform: translateX(6px);
+}
+
+.lcd-screen {
+  /* Basic dimensions and positioning */
+  width: 200px;
+  height: 46px;
+  padding: 20px;
+  position: relative; /* For absolute positioning of inner elements */
+  border-radius: 10px; /* Rounded corners */
+  overflow: hidden; /* Hide any overflowing content */
+}
+
+.lcd-screen {
+  /*background: linear-gradient(to bottom, #000, #111); !* Dark to darker gradient *!*/
+  background: #0a0a0a;
+  opacity: 70%;
+}
+
+.lcd-screen {
+  box-shadow: 0 0 0px rgba(255, 255, 255, 0.0); /* Subtle white glow */
+}
+
+.lcd-screen {
+  border: 0px solid #333; /* Dark gray border */
+}
+
+.lcd-content {
+  color: rgba(255, 255, 255, 0.0);
+  font-size: 15px;
+  position: absolute;
+  top: 50%;
+  left: 43%;
+  transform: translate(-50%, -50%); /* Center the content */
+  font-family: "Silkscreen", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+}
+.silkscreen-regular {
+  font-family: "Silkscreen", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.silkscreen-bold {
+  font-family: "Silkscreen", sans-serif;
+  font-weight: 700;
+  font-style: normal;
 }
